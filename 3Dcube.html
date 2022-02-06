@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D CUBE</title>
+
+    <style>
+        @keyframes mov {
+            100% {
+                transform: rotateX(315deg) rotateY(315deg);
+            }
+
+        }
+
+        body {
+            min-height: 100vh;
+            min-width: 100vw;
+            background-color: black;
+            overflow: hidden;
+            scroll-behavior: smooth;
+            perspective: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #container {
+            text-transform: uppercase;
+            font-family: fantasy serif;
+            font-size: 24px;
+            letter-spacing: 2px;
+            height: 200px;
+            width: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation-name: mov;
+            transform: rotateX(45deg) rotateY(45deg);
+            animation-iteration-count: infinite;
+            animation-duration: 7.5s;
+            animation-delay: 1s;
+            animation-timing-function: ease-in-out;
+        }
+
+        .face {
+
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+        }
+
+        #front {
+            background-color: red;
+            transform: translateZ(100px);
+        }
+
+        #back {
+            background-color: green;
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        #right {
+            background-color: hotpink;
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        #left {
+            background-color: yellow;
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        #top {
+            background-color: indigo;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        #bottom {
+            background-color: blue;
+            transform: rotateX(-90deg) translateZ(100px);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="face" id="front"> front </div>
+        <div class="face" id="right"> right </div>
+        <div class="face" id="left"> left </div>
+        <div class="face" id="back"> back</div>
+        <div class="face" id="top"> top </div>
+        <div class="face" id="bottom"> bottom </div>
+
+
+
+    </div>
+</body>
+
+</html>
